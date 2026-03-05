@@ -1,6 +1,5 @@
 @use 'vars' as v;
 
-// Fonts
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Quicksand:wght@500&family=Roboto:wght@400;700&display=swap');
 
 * {
@@ -15,13 +14,35 @@ ol {
     list-style: none;
 }
 
+// 1. ПРИКРІПЛЕННЯ ФУТЕРА (STICKY FOOTER)
 html,
 body {
+    height: 100%; // Обов'язково для розрахунку висоти екрана
+}
+
+body {
+    display: flex;
+    flex-direction: column; // Елементи сторінки шикуються вертикально
     font-size: v.$main-font-size;
     font-family: v.$roboto-font-family;
     background: v.$main-background;
     color: v.$main-font-color;
     line-height: 1.5;
+}
+
+main {
+    flex: 1 0 auto; // Розтягує контентну частину, штовхаючи футер вниз
+}
+
+.header {
+    flex-shrink: 0;
+    padding: 20px 0;
+}
+
+.footer {
+    flex-shrink: 0;
+    padding: 60px 0;
+    background-color: v.$additional-background;
 }
 
 .container {
@@ -30,24 +51,27 @@ body {
     padding: 0 15px;
 }
 
-// Logo
+// 2. ВИПРАВЛЕННЯ ЛОГОТИПА ТА НАПИСУ FREEHAND
 .logo {
     display: inline-flex;
-    align-items: center;
+    align-items: center; // Вирівнювання іконки та тексту по одній лінії
     gap: 13px;
     font-size: 35px;
     font-weight: 500;
     font-family: v.$quicksand-font-family;
-    text-decoration: none;
-    color: v.$main-font-color;
+    text-decoration: none; // Прибирає синє підкреслення посилання
+    color: v.$main-font-color; // Встановлює правильний темний колір тексту
+
+    &__img {
+        display: block;
+    }
 
     &--footer {
-        color: #fff;
+        color: #fff; // У футері напис Freehand стає білим
         margin-bottom: 30px;
     }
 }
 
-// Typography
 .title_1 {
     font-family: v.$nunito-font-family;
     font-size: 40px;
@@ -60,38 +84,35 @@ body {
     letter-spacing: 1px;
 }
 
-// Service Card
+// 3. СТАТИЧНІ КАРТКИ (БЕЗ ЗБІЛЬШЕННЯ ТА ТІНЕЙ)
 .service-card {
     padding: 40px;
-    border: 1px solid #eee;
+    background: #fff;
+    border: 1px solid #eee; // Тонка рамка, що не змінює товщину
     border-radius: v.$main-border-radius;
-    transition: all 0.3s ease;
     cursor: pointer;
+    // Анімуємо лише колір рамки, щоб не було дрижання сусідніх блоків
+    transition: border-color 0.3s ease;
 
     &__icon-box {
+        position: relative;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 60px;
         height: 60px;
         margin-bottom: 25px;
-        border: 1px solid rgba(61, 179, 112, 0.2);
+        // Рамка іконки залишається статичною (сірою)
+        border: 1px solid rgba(118, 144, 168, 0.2);
         border-radius: 12px;
-        transition: all 0.3s ease;
 
-        // Початковий колір іконки
-        color: v.$clr-accent;
+        .icon-static {
+            display: block;
+        }
 
-        svg {
-
-            // Фарбуємо частини SVG залежно від поточного color
-            .svg-fill-part {
-                fill: currentColor;
-            }
-
-            .svg-stroke-part {
-                stroke: currentColor;
-            }
+        .icon-hover {
+            display: none;
+            position: absolute;
         }
     }
 
@@ -99,7 +120,7 @@ body {
         font-family: v.$nunito-font-family;
         font-size: 24px;
         margin-bottom: 15px;
-        transition: color 0.3s ease;
+        color: v.$main-font-color; // Текст не змінює колір при наведенні
     }
 
     &__text {
@@ -114,29 +135,26 @@ body {
         text-decoration: none;
     }
 
-    // Hover
     &:hover {
-        border-color: v.$clr-accent;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border-color: v.$clr-accent; // Тільки основна рамка стає зеленою
+        // Жодних box-shadow та transform: scale()!
 
         .service-card__icon-box {
-            // Змінюємо колір, який підхопить іконка через currentColor
-            color: v.$additional-background;
-            border-color: v.$additional-background;
-        }
+            // Рамка навколо іконки НЕ чорніє
+            border-color: rgba(118, 144, 168, 0.2);
 
-        .service-card__title {
-            color: v.$clr-accent;
+            .icon-static {
+                display: none;
+            }
+
+            .icon-hover {
+                display: block;
+            }
         }
     }
 }
 
-// Socials (ви залишили як є, бо вони працюють)
-.footer {
-    padding: 60px 0;
-    background-color: v.$additional-background;
-}
-
+// 4. СОЦМЕРЕЖІ
 .social-list {
     display: flex;
     gap: 10px;
@@ -149,7 +167,7 @@ body {
         height: 38px;
         border-radius: 5px;
         background: #EFEEF3;
-        transition: all 0.3s ease;
+        transition: background 0.3s ease;
 
         svg {
             fill: v.$main-font-color;
@@ -157,6 +175,8 @@ body {
         }
 
         &:hover {
+            background: #e2e1e7;
+
             svg {
                 fill: v.$clr-accent;
             }

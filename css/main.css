@@ -14,11 +14,41 @@ ol {
 
 html,
 body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   background: #FFF;
   color: #16133d;
   line-height: 1.5;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.header {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 20px 0;
+}
+
+.footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 60px 0;
+  background-color: #16133d;
 }
 
 .container {
@@ -41,25 +71,20 @@ body {
   text-decoration: none;
   color: #16133d;
 }
-.logo__svg {
-  fill: #3DB370;
+.logo__img {
+  display: block;
 }
 .logo--footer {
   color: #fff;
   margin-bottom: 30px;
 }
-.logo--footer .logo__svg {
-  fill: #fff;
-}
 
 .title_1 {
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 600;
   font-size: 40px;
 }
 
 .title_3 {
-  margin-bottom: 10px;
   font-size: 14px;
   color: #7690a8;
   text-transform: uppercase;
@@ -68,12 +93,15 @@ body {
 
 .service-card {
   padding: 40px;
+  background: #fff;
   border: 1px solid #eee;
   border-radius: 12px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 .service-card__icon-box {
+  position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -83,19 +111,24 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 25px;
-  border: 1px solid rgba(61, 179, 112, 0.2);
-  border-radius: 10px;
+  border: 1px solid rgba(118, 144, 168, 0.2);
+  border-radius: 12px;
 }
-.service-card__icon-box svg {
-  fill: #3DB370;
+.service-card__icon-box .icon-static {
+  display: block;
+}
+.service-card__icon-box .icon-hover {
+  display: none;
+  position: absolute;
 }
 .service-card__title {
   font-family: "Nunito Sans", sans-serif;
   font-size: 24px;
   margin-bottom: 15px;
+  color: #16133d;
 }
 .service-card__text {
   color: #7690a8;
@@ -106,15 +139,18 @@ body {
   color: #3DB370;
   font-weight: 700;
   text-decoration: none;
-  font-size: 14px;
 }
-.service-card:hover, .service-card--active {
+.service-card:hover {
   border-color: #3DB370;
 }
-
-.footer {
-  padding: 60px 0;
-  background-color: #16133d;
+.service-card:hover .service-card__icon-box {
+  border-color: rgba(118, 144, 168, 0.2);
+}
+.service-card:hover .service-card__icon-box .icon-static {
+  display: none;
+}
+.service-card:hover .service-card__icon-box .icon-hover {
+  display: block;
 }
 
 .social-list {
@@ -137,8 +173,8 @@ body {
   height: 38px;
   border-radius: 5px;
   background: #EFEEF3;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
 }
 .social-list__link svg {
   fill: #16133d;
@@ -146,7 +182,7 @@ body {
   transition: fill 0.3s ease;
 }
 .social-list__link:hover {
-  background: #EFEEF3;
+  background: #e2e1e7;
 }
 .social-list__link:hover svg {
   fill: #3DB370;
