@@ -1,6 +1,6 @@
 @use 'vars' as v;
 
-// Import Google Fonts
+// Fonts
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Quicksand:wght@500&family=Roboto:wght@400;700&display=swap');
 
 * {
@@ -30,7 +30,7 @@ body {
     padding: 0 15px;
 }
 
-// Logo Styles
+// Logo
 .logo {
     display: inline-flex;
     align-items: center;
@@ -41,54 +41,57 @@ body {
     text-decoration: none;
     color: v.$main-font-color;
 
-    &__svg {
-        fill: v.$clr-accent;
-    }
-
     &--footer {
         color: #fff;
-        margin-bottom: 30px; // Відступ від іконок
-
-        .logo__svg {
-            fill: #fff; // Біле лого у футері без ефектів
-        }
+        margin-bottom: 30px;
     }
 }
 
 // Typography
 .title_1 {
     font-family: v.$nunito-font-family;
-    font-weight: 600;
     font-size: 40px;
 }
 
 .title_3 {
-    margin-bottom: 10px;
     font-size: 14px;
     color: v.$clr-muted;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-// Service Cards
+// Service Card
 .service-card {
     padding: 40px;
     border: 1px solid #eee;
     border-radius: v.$main-border-radius;
     transition: all 0.3s ease;
+    cursor: pointer;
 
     &__icon-box {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         margin-bottom: 25px;
         border: 1px solid rgba(61, 179, 112, 0.2);
-        border-radius: 10px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+
+        // Початковий колір іконки
+        color: v.$clr-accent;
 
         svg {
-            fill: v.$clr-accent;
+
+            // Фарбуємо частини SVG залежно від поточного color
+            .svg-fill-part {
+                fill: currentColor;
+            }
+
+            .svg-stroke-part {
+                stroke: currentColor;
+            }
         }
     }
 
@@ -96,6 +99,7 @@ body {
         font-family: v.$nunito-font-family;
         font-size: 24px;
         margin-bottom: 15px;
+        transition: color 0.3s ease;
     }
 
     &__text {
@@ -108,22 +112,31 @@ body {
         color: v.$clr-accent;
         font-weight: 700;
         text-decoration: none;
-        font-size: 14px;
     }
 
-    &:hover,
-    &--active {
+    // Hover
+    &:hover {
         border-color: v.$clr-accent;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+        .service-card__icon-box {
+            // Змінюємо колір, який підхопить іконка через currentColor
+            color: v.$additional-background;
+            border-color: v.$additional-background;
+        }
+
+        .service-card__title {
+            color: v.$clr-accent;
+        }
     }
 }
 
-// Footer - ТУТ БУЛА ПОМИЛКА (Повернув фон)
+// Socials (ви залишили як є, бо вони працюють)
 .footer {
     padding: 60px 0;
-    background-color: v.$additional-background; // Твій темно-синій колір
+    background-color: v.$additional-background;
 }
 
-// Socials - Наведення: фон білий, іконка зелена
 .social-list {
     display: flex;
     gap: 10px;
@@ -135,19 +148,17 @@ body {
         width: 38px;
         height: 38px;
         border-radius: 5px;
-        background: #EFEEF3; // Світлий фон
+        background: #EFEEF3;
         transition: all 0.3s ease;
 
         svg {
-            fill: v.$main-font-color; // Темний колір іконки
+            fill: v.$main-font-color;
             transition: fill 0.3s ease;
         }
 
         &:hover {
-            background: #EFEEF3; // ФОН ЗАЛИШАЄТЬСЯ БІЛИМ
-
             svg {
-                fill: v.$clr-accent; // ІКОНКА СТАЄ ЗЕЛЕНОЮ
+                fill: v.$clr-accent;
             }
         }
     }
