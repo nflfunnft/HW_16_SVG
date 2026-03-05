@@ -14,16 +14,15 @@ ol {
     list-style: none;
 }
 
-// ГАРАНТІЯ СТАТИЧНОСТІ ФУТЕРА
 html,
 body {
-    height: 100%; // Обов'язково
+    height: 100%;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; // Тіло завжди на весь екран
+    min-height: 100vh;
     font-size: v.$main-font-size;
     font-family: v.$roboto-font-family;
     background: v.$main-background;
@@ -32,11 +31,11 @@ body {
 }
 
 main {
-    flex: 1 0 auto; // Цей блок забирає все вільне місце і штовхає футер вниз
+    flex: 1 0 auto;
 }
 
 .footer {
-    flex-shrink: 0; // Футер ніколи не змінює свою висоту
+    flex-shrink: 0;
     padding: 80px 0;
     background-color: v.$additional-background;
 }
@@ -47,7 +46,6 @@ main {
     padding: 0 15px;
 }
 
-// HEADER
 .header {
     flex-shrink: 0;
     padding: 22px 0;
@@ -74,7 +72,6 @@ main {
     }
 }
 
-// SERVICES SECTION
 .services-section {
     padding: 100px 0;
 }
@@ -101,19 +98,15 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    align-items: stretch; // Картки в одному ряду завжди однієї висоти
+    align-items: stretch;
 }
 
-// SERVICE CARD (БЕЗ ТІНЕЙ, НА ЧИСТИХ БОРДЕРАХ)
 .service-card {
     padding: 50px 40px;
     background: #fff;
-    // РАМКА Є ЗАВЖДИ. Вона займає 1px простору постійно.
     border: 1px solid #eee;
     border-radius: v.$main-border-radius;
     cursor: pointer;
-
-    // Анімуємо ТІЛЬКИ колір рамки. Товщина залишається 1px.
     transition: border-color 0.3s ease, background-color 0.3s ease;
 
     display: flex;
@@ -127,7 +120,6 @@ main {
         width: 64px;
         height: 64px;
         margin-bottom: 30px;
-        // Теж постійна рамка
         border: 1px solid rgba(118, 144, 168, 0.2);
         border-radius: 12px;
 
@@ -166,7 +158,6 @@ main {
     }
 
     &:hover {
-        // Змінюється лише колір!
         border-color: v.$clr-accent;
 
         .service-card__icon-box {
