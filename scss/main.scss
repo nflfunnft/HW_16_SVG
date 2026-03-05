@@ -169,10 +169,6 @@ main {
         // Змінюється лише колір!
         border-color: v.$clr-accent;
 
-        .service-card__title {
-            color: v.$clr-accent;
-        }
-
         .service-card__icon-box {
             .icon-static {
                 display: none;

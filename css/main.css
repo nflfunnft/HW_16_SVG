@@ -177,9 +177,6 @@ main {
 .service-card:hover {
   border-color: #3DB370;
 }
-.service-card:hover .service-card__title {
-  color: #3DB370;
-}
 .service-card:hover .service-card__icon-box .icon-static {
   display: none;
 }
