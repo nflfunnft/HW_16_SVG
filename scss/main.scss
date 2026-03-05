@@ -14,15 +14,14 @@ ol {
     list-style: none;
 }
 
-// 1. ПРИКРІПЛЕННЯ ФУТЕРА (STICKY FOOTER)
 html,
 body {
-    height: 100%; // Обов'язково для розрахунку висоти екрана
+    height: 100%;
 }
 
 body {
     display: flex;
-    flex-direction: column; // Елементи сторінки шикуються вертикально
+    flex-direction: column;
     font-size: v.$main-font-size;
     font-family: v.$roboto-font-family;
     background: v.$main-background;
@@ -31,7 +30,7 @@ body {
 }
 
 main {
-    flex: 1 0 auto; // Розтягує контентну частину, штовхаючи футер вниз
+    flex: 1 0 auto;
 }
 
 .header {
@@ -51,23 +50,22 @@ main {
     padding: 0 15px;
 }
 
-// 2. ВИПРАВЛЕННЯ ЛОГОТИПА ТА НАПИСУ FREEHAND
 .logo {
     display: inline-flex;
-    align-items: center; // Вирівнювання іконки та тексту по одній лінії
+    align-items: center;
     gap: 13px;
     font-size: 35px;
     font-weight: 500;
     font-family: v.$quicksand-font-family;
-    text-decoration: none; // Прибирає синє підкреслення посилання
-    color: v.$main-font-color; // Встановлює правильний темний колір тексту
+    text-decoration: none;
+    color: v.$main-font-color;
 
     &__img {
         display: block;
     }
 
     &--footer {
-        color: #fff; // У футері напис Freehand стає білим
+        color: #fff;
         margin-bottom: 30px;
     }
 }
@@ -84,14 +82,12 @@ main {
     letter-spacing: 1px;
 }
 
-// 3. СТАТИЧНІ КАРТКИ (БЕЗ ЗБІЛЬШЕННЯ ТА ТІНЕЙ)
 .service-card {
     padding: 40px;
     background: #fff;
-    border: 1px solid #eee; // Тонка рамка, що не змінює товщину
+    border: 1px solid #eee;
     border-radius: v.$main-border-radius;
     cursor: pointer;
-    // Анімуємо лише колір рамки, щоб не було дрижання сусідніх блоків
     transition: border-color 0.3s ease;
 
     &__icon-box {
@@ -102,7 +98,6 @@ main {
         width: 60px;
         height: 60px;
         margin-bottom: 25px;
-        // Рамка іконки залишається статичною (сірою)
         border: 1px solid rgba(118, 144, 168, 0.2);
         border-radius: 12px;
 
@@ -120,7 +115,7 @@ main {
         font-family: v.$nunito-font-family;
         font-size: 24px;
         margin-bottom: 15px;
-        color: v.$main-font-color; // Текст не змінює колір при наведенні
+        color: v.$main-font-color;
     }
 
     &__text {
@@ -136,11 +131,9 @@ main {
     }
 
     &:hover {
-        border-color: v.$clr-accent; // Тільки основна рамка стає зеленою
-        // Жодних box-shadow та transform: scale()!
+        border-color: v.$clr-accent;
 
         .service-card__icon-box {
-            // Рамка навколо іконки НЕ чорніє
             border-color: rgba(118, 144, 168, 0.2);
 
             .icon-static {
@@ -154,7 +147,6 @@ main {
     }
 }
 
-// 4. СОЦМЕРЕЖІ
 .social-list {
     display: flex;
     gap: 10px;
