@@ -25,6 +25,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 100vh;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   background: #FFF;
@@ -38,16 +39,10 @@ main {
           flex: 1 0 auto;
 }
 
-.header {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  padding: 20px 0;
-}
-
 .footer {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  padding: 60px 0;
+  padding: 80px 0;
   background-color: #16133d;
 }
 
@@ -55,6 +50,13 @@ main {
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.header {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 22px 0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .logo {
@@ -79,26 +81,50 @@ main {
   margin-bottom: 30px;
 }
 
-.title_1 {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 40px;
+.services-section {
+  padding: 100px 0;
 }
 
-.title_3 {
-  font-size: 14px;
+.services-header {
+  margin-bottom: 60px;
+}
+.services-header .title_3 {
+  font-size: 16px;
   color: #7690a8;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+.services-header .title_1 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .service-card {
-  padding: 40px;
+  padding: 50px 40px;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 12px;
   cursor: pointer;
-  -webkit-transition: border-color 0.3s ease;
-  transition: border-color 0.3s ease;
+  -webkit-transition: border-color 0.3s ease, background-color 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .service-card__icon-box {
   position: relative;
@@ -111,9 +137,9 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 60px;
-  height: 60px;
-  margin-bottom: 25px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 30px;
   border: 1px solid rgba(118, 144, 168, 0.2);
   border-radius: 12px;
 }
@@ -125,26 +151,34 @@ main {
   position: absolute;
 }
 .service-card__title {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 24px;
-  margin-bottom: 15px;
+  font-weight: 400;
+  margin-bottom: 20px;
   color: #16133d;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 .service-card__text {
   color: #7690a8;
-  font-size: 14px;
-  margin-bottom: 25px;
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .service-card__link {
   color: #3DB370;
   font-weight: 700;
   text-decoration: none;
+  font-size: 16px;
 }
 .service-card:hover {
   border-color: #3DB370;
 }
-.service-card:hover .service-card__icon-box {
-  border-color: rgba(118, 144, 168, 0.2);
+.service-card:hover .service-card__title {
+  color: #3DB370;
 }
 .service-card:hover .service-card__icon-box .icon-static {
   display: none;
@@ -157,7 +191,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 .social-list__link {
   display: -webkit-box;
@@ -169,12 +203,12 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 5px;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
   background: #EFEEF3;
-  -webkit-transition: background 0.3s ease;
-  transition: background 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .social-list__link svg {
   fill: #16133d;
@@ -182,7 +216,7 @@ main {
   transition: fill 0.3s ease;
 }
 .social-list__link:hover {
-  background: #e2e1e7;
+  background: #fff;
 }
 .social-list__link:hover svg {
   fill: #3DB370;

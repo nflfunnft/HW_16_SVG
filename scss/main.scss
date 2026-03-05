@@ -14,14 +14,16 @@ ol {
     list-style: none;
 }
 
+// ГАРАНТІЯ СТАТИЧНОСТІ ФУТЕРА
 html,
 body {
-    height: 100%;
+    height: 100%; // Обов'язково
 }
 
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh; // Тіло завжди на весь екран
     font-size: v.$main-font-size;
     font-family: v.$roboto-font-family;
     background: v.$main-background;
@@ -30,17 +32,12 @@ body {
 }
 
 main {
-    flex: 1 0 auto;
-}
-
-.header {
-    flex-shrink: 0;
-    padding: 20px 0;
+    flex: 1 0 auto; // Цей блок забирає все вільне місце і штовхає футер вниз
 }
 
 .footer {
-    flex-shrink: 0;
-    padding: 60px 0;
+    flex-shrink: 0; // Футер ніколи не змінює свою висоту
+    padding: 80px 0;
     background-color: v.$additional-background;
 }
 
@@ -48,6 +45,13 @@ main {
     max-width: v.$container-width;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+// HEADER
+.header {
+    flex-shrink: 0;
+    padding: 22px 0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .logo {
@@ -70,34 +74,60 @@ main {
     }
 }
 
-.title_1 {
-    font-family: v.$nunito-font-family;
-    font-size: 40px;
+// SERVICES SECTION
+.services-section {
+    padding: 100px 0;
 }
 
-.title_3 {
-    font-size: 14px;
-    color: v.$clr-muted;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.services-header {
+    margin-bottom: 60px;
+
+    .title_3 {
+        font-size: 16px;
+        color: v.$clr-muted;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+
+    .title_1 {
+        font-family: v.$nunito-font-family;
+        font-size: 40px;
+        font-weight: 700;
+    }
 }
 
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch; // Картки в одному ряду завжди однієї висоти
+}
+
+// SERVICE CARD (БЕЗ ТІНЕЙ, НА ЧИСТИХ БОРДЕРАХ)
 .service-card {
-    padding: 40px;
+    padding: 50px 40px;
     background: #fff;
+    // РАМКА Є ЗАВЖДИ. Вона займає 1px простору постійно.
     border: 1px solid #eee;
     border-radius: v.$main-border-radius;
     cursor: pointer;
-    transition: border-color 0.3s ease;
+
+    // Анімуємо ТІЛЬКИ колір рамки. Товщина залишається 1px.
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
 
     &__icon-box {
         position: relative;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 60px;
-        height: 60px;
-        margin-bottom: 25px;
+        width: 64px;
+        height: 64px;
+        margin-bottom: 30px;
+        // Теж постійна рамка
         border: 1px solid rgba(118, 144, 168, 0.2);
         border-radius: 12px;
 
@@ -112,30 +142,38 @@ main {
     }
 
     &__title {
-        font-family: v.$nunito-font-family;
+        font-family: v.$roboto-font-family;
         font-size: 24px;
-        margin-bottom: 15px;
+        font-weight: 400;
+        margin-bottom: 20px;
         color: v.$main-font-color;
+        transition: color 0.3s ease;
     }
 
     &__text {
         color: v.$clr-muted;
-        font-size: 14px;
-        margin-bottom: 25px;
+        font-size: 16px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        flex-grow: 1;
     }
 
     &__link {
         color: v.$clr-accent;
         font-weight: 700;
         text-decoration: none;
+        font-size: 16px;
     }
 
     &:hover {
+        // Змінюється лише колір!
         border-color: v.$clr-accent;
 
-        .service-card__icon-box {
-            border-color: rgba(118, 144, 168, 0.2);
+        .service-card__title {
+            color: v.$clr-accent;
+        }
 
+        .service-card__icon-box {
             .icon-static {
                 display: none;
             }
@@ -147,19 +185,20 @@ main {
     }
 }
 
+// SOCIALS
 .social-list {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 
     &__link {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 38px;
-        height: 38px;
-        border-radius: 5px;
+        width: 42px;
+        height: 42px;
+        border-radius: 8px;
         background: #EFEEF3;
-        transition: background 0.3s ease;
+        transition: all 0.3s ease;
 
         svg {
             fill: v.$main-font-color;
@@ -167,7 +206,7 @@ main {
         }
 
         &:hover {
-            background: #e2e1e7;
+            background: #fff;
 
             svg {
                 fill: v.$clr-accent;
