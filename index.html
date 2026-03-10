@@ -6,83 +6,152 @@
     <title>Freehand Landing Page</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
-<body>
 
+  <body>
     <header class="header">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="./assets/img/logo.svg" alt="Logo Company" class="logo__img">
-                Freehand
-            </a>
-        </div>
+      <div class="container">
+        <a href="#" class="logo">
+          <img
+            src="./assets/img/logo.svg"
+            alt="Logo Company"
+            class="logo__img"
+          >
+          Freehand
+        </a>
+      </div>
     </header>
 
-    <main class="services-section">
+    <main class="main">
+      <section class="services">
         <div class="container">
-            <div class="services-header">
-                <p class="title_3">Our Services</p>
-                <h1 class="title_1">We build experience</h1>
-                </div>
+          <div class="services__header">
+            <p class="services__subtitle">Our Services</p>
+            <h1 class="services__title">We build experience</h1>
+          </div>
 
-            <div class="services-grid">
-                <article class="service-card">
-                    <div class="service-card__icon-box">
-                        <svg class="icon-static" width="32" height="32">
-                            <use xlink:href="./assets/img/sprite.svg#megaphones"></use>
-                        </svg>
-                        <svg class="icon-hover" width="32" height="32">
-                            <use xlink:href="./assets/img/sprite.svg#megaphones_hover"></use>
-                        </svg>
-                    </div>
-                    <h2 class="service-card__title">Design</h2> <p class="service-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
-                    <a href="#" class="service-card__link">Learn more</a>
-                </article>
+          <div class="services__grid">
+            <article class="service-card">
+              <div class="service-card__icon-box">
+                <svg class="service-card__icon">
+                  <use xlink:href="./assets/img/sprite.svg#megaphones"></use>
+                </svg>
 
-                <article class="service-card">
-                    <div class="service-card__icon-box">
-                        <svg class="icon-static" width="32" height="32">
-                            <use xlink:href="./assets/img/sprite.svg#buildings"></use>
-                        </svg>
-                        <svg class="icon-hover" width="32" height="32">
-                            <use xlink:href="./assets/img/sprite.svg#buildings_hover"></use>
-                        </svg>
-                    </div>
-                    <h2 class="service-card__title">Ecommerce</h2> <p class="service-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
-                    <a href="#" class="service-card__link">Learn more</a>
-                </article>
+                <svg class="service-card__icon service-card__icon--hover">
+                  <use
+                    xlink:href="./assets/img/sprite.svg#megaphones_hover"
+                  ></use>
+                </svg>
+              </div>
 
-                <article class="service-card">
-                    <div class="service-card__icon-box">
-                        <svg class="icon-static" width="32" height="32">
-                            <use xlink:href="./assets/img/sprite.svg#phones"></use>
-                        </svg>
-                        <svg class="icon-hover" width="32" height="32">
-                            <use xlink:href="./assets/img/sprite.svg#phones_hover"></use>
-                        </svg>
-                    </div>
-                    <h2 class="service-card__title">Application</h2> <p class="service-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
-                    <a href="#" class="service-card__link">Learn more</a>
-                </article>
-            </div>
+              <h2 class="service-card__title">Design</h2>
+
+              <p class="service-card__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros.
+              </p>
+
+              <a href="#" class="service-card__link">Learn more</a>
+            </article>
+
+            <article class="service-card">
+              <div class="service-card__icon-box">
+                <svg class="service-card__icon">
+                  <use xlink:href="./assets/img/sprite.svg#buildings"></use>
+                </svg>
+
+                <svg class="service-card__icon service-card__icon--hover">
+                  <use
+                    xlink:href="./assets/img/sprite.svg#buildings_hover"
+                  ></use>
+                </svg>
+              </div>
+
+              <h2 class="service-card__title">Ecommerce</h2>
+
+              <p class="service-card__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros.
+              </p>
+
+              <a href="#" class="service-card__link">Learn more</a>
+            </article>
+
+            <article class="service-card">
+              <div class="service-card__icon-box">
+                <svg class="service-card__icon">
+                  <use xlink:href="./assets/img/sprite.svg#phones"></use>
+                </svg>
+
+                <svg class="service-card__icon service-card__icon--hover">
+                  <use xlink:href="./assets/img/sprite.svg#phones_hover"></use>
+                </svg>
+              </div>
+
+              <h2 class="service-card__title">Application</h2>
+
+              <p class="service-card__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros.
+              </p>
+
+              <a href="#" class="service-card__link">Learn more</a>
+            </article>
+          </div>
         </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <a href="#" class="logo logo--footer">
-                <img src="./assets/img/logo.svg" alt="Logo Company" class="logo__img">
-                Freehand
-            </a>
-            
-            <ul class="social-list">
-                <li><a href="#" class="social-list__link"><svg width="18" height="18"><use xlink:href="./assets/img/sprite.svg#instagram"></use></svg></a></li>
-                <li><a href="#" class="social-list__link"><svg width="18" height="18"><use xlink:href="./assets/img/sprite.svg#facebook"></use></svg></a></li>
-                <li><a href="#" class="social-list__link"><svg width="18" height="18"><use xlink:href="./assets/img/sprite.svg#github"></use></svg></a></li>
-                <li><a href="#" class="social-list__link"><svg width="18" height="18"><use xlink:href="./assets/img/sprite.svg#dribble"></use></svg></a></li>
-                <li><a href="#" class="social-list__link"><svg width="18" height="18"><use xlink:href="./assets/img/sprite.svg#twitter"></use></svg></a></li>
-            </ul>
-        </div>
-    </footer>
+      <div class="container">
+        <div class="footer__content">
+          <a href="#" class="logo logo--footer">
+            <img
+              src="./assets/img/logo.svg"
+              alt="Logo Company"
+              class="logo__img"
+            >
+            Freehand
+          </a>
 
-</body>
+          <ul class="social-list">
+            <li class="social-list__item">
+              <a href="#" class="social-list__link">
+                <svg width="18" height="18">
+                  <use xlink:href="./assets/img/sprite.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="#" class="social-list__link">
+                <svg width="18" height="18">
+                  <use xlink:href="./assets/img/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="#" class="social-list__link">
+                <svg width="18" height="18">
+                  <use xlink:href="./assets/img/sprite.svg#github"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="#" class="social-list__link">
+                <svg width="18" height="18">
+                  <use xlink:href="./assets/img/sprite.svg#dribble"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="#" class="social-list__link">
+                <svg width="18" height="18">
+                  <use xlink:href="./assets/img/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
